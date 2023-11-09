@@ -1,0 +1,63 @@
+#include<stdio.h>
+#include<iostream>
+#include<iomanip>
+#include<conio.h>
+using namespace std;
+
+const int N=100 ;
+void Baca (int Nilai [ ], int &M) ;
+void Cetak (int Nilai [ N ], int &M);
+void Jumlah (int Nilai [ N ], int &M, int &Jlh, float &Rata) ;
+
+int main ()
+{
+	 int M;
+	 int Nilai [N];
+	 int Jlh =0;
+	 float Rata;
+	 
+	 cout<<"Banyak Elemen : "; cin>>M;
+	 //memanggil fungsi Baca
+	 Baca (Nilai, M); 
+	 
+	 cout<<"\nElemen Elemen :";
+	 //memanggil fungsi cetak
+	 Cetak(Nilai,M); 
+	 
+	 //memanggil fungsi Jumlah
+	 Jumlah (Nilai, M, Jlh, Rata) ; 
+	 
+	 cout<<"\nJumlah Bilangan : "<<Jlh;
+	 cout<<"\nRata-Rata Bilangan :"<<Rata;
+	 getch ( ) ;
+}
+
+void Cetak (int Nilai [], int &M)
+{
+	 int i;
+	 for(i=0;i<M;i++)
+	 {
+	 	cout<<setw (3) <<Nilai [ i ] ;
+	 }
+}
+
+void Baca (int Nilai [], int & M)
+{
+	 int i ;
+	 for (i=0;i<M;i++)
+	 {
+		 cout<<"Elemen ke-"<<i<<" : ";
+		 cin>>Nilai [i];
+	 }
+}
+
+void Jumlah (int Nilai [], int &M, int &Jlh, float &Rata)
+{
+	 int i;
+	 for (i=0;i<M;i++)
+	 Jlh+=Nilai [i] ;
+	 Rata = (float) Jlh /M;
+}
+
+
+
